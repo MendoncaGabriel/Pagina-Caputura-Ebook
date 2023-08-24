@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Captura</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-green-400 md:p-5">
+
+    <span id="alerta" class="bg-red-400 hidden text-red-900 text-lg font-bold px-1 py-3 items-center justify-center w-72 fixed top-5 left-5 shadow-md rounded">
+        Por favor preencha seu nome!
+    </span>
+   
+
+    <div class="flex item-center justify-center font-black  p-5">
+        <h1 class="text-green-700 text-4xl lg:mb-10 ">Quanto </h1><h1 class="text-white text-4xl">Sobra</h1>
+    </div>
+
+    <section class="md:flex gap-5 items-start justify-around  videoHeader">
+        
+        <div class=" tituloIframe">
+            <p class="text-white font-black md:text-5xl text-3xl md:text-left text-center text-shadow">Planilha | Cadastro de <br> clientes e fornecedores</p>
+            <iframe class="mt-10 m-auto w-full h-60 md:aspect-video  md:h-80"  src="https://www.youtube.com/embed/ehRu8z5IS1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <!-- Formulario -->
+        <div class="formulario bg-green-600 lg:w-96 mt-5 md:mt-0 h-full  rounded-md p-5 text-white">
+
+            <div class=" text-center">
+                <h2 class="font-black text-lg">Receba planilha por e-mail</h2>
+                <p class="mb-3">Preencha os seus dados  para receber o material!</p>
+            </div>
+            <hr>
+
+            <section class="gap-2 grid">
+                <div>
+                    <p>Nome:</p>
+                    <input type="text" class="w-full text-black p-1 rounded" id="nome">
+                </div>
+                <div>
+                    <p>Email:</p>
+                    <input type="email" name="" class="w-full text-black p-1 rounded" id="email">
+                </div>
+                <div>
+                    <p>Você possue empresa?:</p>
+                    <select name="" class="text-black rounded p-1 w-full" id="empresa">
+                        <option value="" selected></option>
+                        <option value="sim">SIM</option>
+                        <option value="nao">NÃO</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Qual o setor da sua empresa?</p>
+                    <select name="" id="selectSetorEmpresa" class="text-black rounded p-1 w-full" >
+                        <option value="" selected></option>
+                    </select>
+                </div>
+                <div>
+                    <p>Quantas pessoas têm na sua empresa?</p>
+                    <input type="number" class="w-full text-black p-1 rounded" id="qtdFuncionarios">
+                </div>
+                
+                <div class="flex gap-1 mt-2">
+                    <input type="checkbox" name="" id="termos">
+                    <p>Concordo em receber e-mails promocionais*</p>
+                </div>
+            </section>
+
+                <button onclick="enviar()" class="bg-yellow-600 font-bold text-1xl p-3 block m-auto mt-2 hover:bg-yellow-700">Receber Material</button>
+
+        </div>
+
+    </section>
+
+    <section class="bg-green-500 md:p-10 p-5 text-shadow md:gap-10  grid md:grid-cols-2  mt-10 md:px-10  grid-cols-1" style="line-height: 16px;">
+
+        <!-- Sobre a planilha -->
+        <div class="text-white "> 
+            <h2 class="text-3xl mb-3">Sobre a planilha</h2>
+            <p class="text-white inline">
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Saiba quem são seus clientes. <br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Tenha o cadastro de seus clientes em só lugar. <br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Campos Personalizados. <br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Com a planilha de cadastro você tem campos personalizados para preencher informações  essenciais de seus clientes e fornecedores. <br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Use filtro para controlar os cadastros. <br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Na planilha de cadastro de clientes e fornecedores você pode aplicar filtros para  encontrar dados de forma mais  rápida e simples.
+            </p>
+        </div>
+
+        <!-- Importante -->
+        <div class="md:mt-0 mt-10">
+            <h2 class="text-2xl text-white mb-3">Importante</h2>
+            <p class="text-white inline">
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>O link para voce baixar o guia será enviado para seu email, <br> <strong>isso pode levar ate 30 minutos.</strong> <br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Caso você nao receba em sua caixa de entrada, <strong>Verifique na sua caixa de SPAM.</strong> <br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Para evitar que o email seja enviado para sua caixa de spam, adicione o endereço aos seus contatos: <strong>email@email.com</strong><br><br>
+                <span><img src="icons/icons8-caixa-de-selecção-seleccionada-2-80.png" class="w-6 inline mr-2" alt="span visto ok"></span>Para ver como adicionar contatos no seu e-mail:
+            </p>
+            <span class=" text-green-950 inline">
+                <a href="#">Gmail,</a>
+                <a href="#">Outlook,</a>
+                <a href="#">Yahoo.</a>
+            </span>
+        </div>
+    </section>
+
+</body>
+</html>
+
+<script src="script.js"></script>
